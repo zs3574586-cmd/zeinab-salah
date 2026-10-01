@@ -18,7 +18,7 @@ const P = [
   { id: 7, category: 'fingerprint', name: 'إطار بصمة الزفاف', price: 520, image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
   { id: 8, category: 'fingerprint', name: 'بصمة شجرة العائلة', price: 650, image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
   { id: 10, category: 'hoops', name: 'طوق الورد الكلاسيك', price: 380, best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-];
+  ];
 
 /* ---------- 2. Helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -98,8 +98,7 @@ const bestCard = p => `<article class="card"><a class="im" href="product.html?id
   <div class="bd"><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
   <div class="acts"><a class="btn" href="product.html?id=${p.id}">عرض المنتج</a></div></div></article>`;
 const shopCard = p => `<article class="card"><a class="im" href="product.html?id=${p.id}">${imgTag(p)}</a>
-  <div class="bd"><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
-  <div class="acts"><a class="btn out" href="product.html?id=${p.id}">التفاصيل</a><button class="btn" data-add="${p.id}">أضف إلى السلة</button></div></div></article>`;
+  <div class="bd"><h3><a href="product.html?id=${p.id}">${p.name}</a></h3></div></article>`;
 
 /* ---------- 6. Pages ---------- */
 function pageHome() { $('#best').innerHTML = P.filter(p => p.best).map(bestCard).join(''); }
