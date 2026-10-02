@@ -14,11 +14,16 @@ const P = [
   { id: 2, category: 'trays', name: 'صينية الورد الملكية', price: 720, best: true, image: 'images/trays/tray2.jpg', description: 'صينية مزينة بورود صناعية فاخرة تناسب تقديم الشربات والحلويات.', options: [colors, sizes] },
   { id: 3, category: 'trays', name: 'صينية اللؤلؤ الذهبية', price: 940, image: 'images/trays/tray3.jpg', description: 'تصميم راقٍ بحواف من اللؤلؤ الطبيعي ولمسات ذهبية.', options: [colors, sizes] },
   { id: 4, category: 'trays', name: 'صينية الخطوبة البيضاء', price: 600, image: 'images/trays/tray4.jpg', description: 'صينية بيضاء ناعمة بتصميم بسيط وأنيق ليوم الخطوبة.', options: [sizes] },
-  { id: 6, category: 'fingerprint', name: 'لوحة بصمة القلب', price: 450, best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
-  { id: 7, category: 'fingerprint', name: 'إطار بصمة الزفاف', price: 520, image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
-  { id: 8, category: 'fingerprint', name: 'بصمة شجرة العائلة', price: 650, image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
-  { id: 10, category: 'hoops', name: 'طوق الورد الكلاسيك', price: 380, best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-  ];
+  { id: 5, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray5.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 6, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray6.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 7, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 8, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 9, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 10, category: 'fingerprint', name: 'لوحة بصمة القلب', price: 450, best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
+  { id: 11, category: 'fingerprint', name: 'إطار بصمة الزفاف', price: 520, image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
+  { id: 12, category: 'fingerprint', name: 'بصمة شجرة العائلة', price: 650, image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 13, category: 'hoops', name: 'طوق الورد الكلاسيك', price: 380, best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
+];
 
 /* ---------- 2. Helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -88,17 +93,18 @@ function renderLayout() {
     const v = e.target.value.trim(), box = $('#sres');
     if (!v) return box.innerHTML = '';
     const r = P.filter(p => p.name.includes(v)).slice(0, 8);
-    box.innerHTML = r.length ? r.map(p => `<a href="product.html?id=${p.id}">${imgTag(p)}<span>${p.name} — <b class="price">${money(p.price)}</b></span></a>`).join('') : '<p class="empty">لا توجد نتائج</p>';
+    box.innerHTML = r.length ? r.map(p => `<a href="product.html#${p.id}">${imgTag(p)}<span>${p.name}</span></a>`).join('') : '<p class="empty">لا توجد نتائج</p>';
   };
 }
 
 /* ---------- 5. Product card templates ---------- */
 /* "best" cards: image + name + price + view button ONLY (no heart, no cart) */
-const bestCard = p => `<article class="card"><a class="im" href="product.html?id=${p.id}">${imgTag(p)}</a>
-  <div class="bd"><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
-  <div class="acts"><a class="btn" href="product.html?id=${p.id}">عرض المنتج</a></div></div></article>`;
-const shopCard = p => `<article class="card"><a class="im" href="product.html?id=${p.id}">${imgTag(p)}</a>
-  <div class="bd"><h3><a href="product.html?id=${p.id}">${p.name}</a></h3></div></article>`;
+const bestCard = p => `<article class="card"><a class="im" href="product.html#${p.id}">${imgTag(p)}</a>
+  <div class="bd"><h3>${p.name}</h3>
+  <div class="acts"><a class="btn" href="product.html#${p.id}">عرض المنتج</a></div></div></article>`;
+const shopCard = p => `<article class="card"><a class="im" href="product.html#${p.id}">${imgTag(p)}</a>
+  <div class="bd"><h3>${p.name}</h3>
+  <div class="acts"><a class="btn out" href="product.html#${p.id}">التفاصيل</a><button class="btn" data-add="${p.id}">أضف إلى السلة</button></div></div></article>`;
 
 /* ---------- 6. Pages ---------- */
 function pageHome() { $('#best').innerHTML = P.filter(p => p.best).map(bestCard).join(''); }
@@ -110,23 +116,24 @@ function pageCategory() {
 }
 
 function pageProduct() {
-  const p = byId(new URLSearchParams(location.search).get('id'));
+  window.addEventListener('hashchange', () => location.reload());
+  const p = byId(location.hash.slice(1));
   if (!p) { $('#main').innerHTML = '<div class="empty wrap"><h2>المنتج غير موجود</h2><a class="btn" href="index.html">العودة للرئيسية</a></div>'; return; }
   document.title = p.name + ' | ZOZO STORE';
   const rel = P.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
   $('#main').innerHTML = `<div class="wrap">
     <div class="crumb"><a href="${CAT[p.category].page}">→ ${CAT[p.category].title}</a></div>
     <div class="pd"><div class="pd-im">${imgTag(p)}</div><div>
-      <h1>${p.name}</h1><div class="price">${money(p.price)}</div><p>${p.description}</p>
+      <h1>${p.name}</h1><p>${p.description}</p>
       ${(p.options || []).map((o, i) => `<div class="opt"><label>${o.label}</label><select data-opt="${o.label}">${o.values.map(v => `<option>${v}</option>`).join('')}</select></div>`).join('')}
       <div class="opt"><label>الكمية</label><div class="qty"><button id="plus">+</button><span id="qv">1</span><button id="minus">−</button></div></div>
       <div class="row"><button class="btn" id="addBtn">أضف إلى السلة</button><a class="btn out" href="cart.html">عرض السلة</a><button class="btn out" onclick="history.length>1?history.back():location.href='${CAT[p.category].page}'">رجوع</button></div>
     </div></div>
     <section class="sec"><h2 class="sec-t">منتجات مشابهة</h2><div class="grid">${rel.map(bestCard).join('')}</div></section></div>`;
   let q = 1;
-  $('#plus').onclick = () => $('#qv').textContent = ++q;
-  $('#minus').onclick = () => { if (q > 1) $('#qv').textContent = --q; };
-  $('#addBtn').onclick = () => {
+  const pl = $('#plus'); if (pl) pl.onclick = () => $('#qv').textContent = ++q;
+  const mi = $('#minus'); if (mi) mi.onclick = () => { if (q > 1) $('#qv').textContent = --q; };
+  const ab = $('#addBtn'); if (ab) ab.onclick = () => {
     const opt = {}; document.querySelectorAll('[data-opt]').forEach(s => opt[s.dataset.opt] = s.value);
     addToCart(p.id, q, opt);
   };
@@ -136,13 +143,11 @@ function pageCart() {
   const draw = () => {
     const cart = getCart();
     if (!cart.length) { $('#main').innerHTML = '<div class="wrap sec empty"><h2>سلتك فارغة 🛍</h2><br><a class="btn" href="index.html#categories">تسوقي الآن</a></div>'; return; }
-    const total = cart.reduce((s, i) => s + byId(i.id).price * i.qty, 0);
     $('#main').innerHTML = `<div class="wrap sec"><h1 class="sec-t">سلة التسوق</h1>
       ${cart.map((i, k) => { const p = byId(i.id); return `<div class="ci">${imgTag(p)}
-        <div><b>${p.name}</b><br><small>${Object.values(i.opt).join(' • ')}</small><br><span class="price">${money(p.price)}</span></div>
+        <div><b>${p.name}</b><br><small>${Object.values(i.opt).join(' • ')}</small></div>
         <div class="qty"><button data-q="${k}" data-d="1">+</button><span>${i.qty}</span><button data-q="${k}" data-d="-1">−</button></div>
-        <b>${money(p.price * i.qty)}</b><button class="rm" data-rm="${k}">حذف ✕</button></div>`; }).join('')}
-      <div class="total">الإجمالي: <span class="price">${money(total)}</span></div>
+        <button class="rm" data-rm="${k}">حذف ✕</button></div>`; }).join('')}
       <div class="row"><button class="btn" id="checkout">إتمام الطلب</button><a class="btn out" href="index.html#categories">متابعة التسوق</a></div></div>`;
     $('#checkout').onclick = () => { localStorage.removeItem('zozoCart'); updateBadge(); toast('تم استلام طلبك، شكراً لكِ 🤍'); draw(); };
   };
