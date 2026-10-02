@@ -62,10 +62,10 @@ function renderLayout() {
     <div class="sbar" id="sbar"><input id="q" type="search" placeholder="ابحثي عن منتج... مثال: كريستال"><div id="sres"></div></div></header>`;
   $('#ftr').outerHTML = `<footer class="ftr"><div class="wrap"><div class="ftr-g">
     <div><a class="logo" href="index.html">ZOZO<br>STORE</a><p>لمسات تجمع حب وتفاصيل تدوم</p>
-      <div class="soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">in</a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">♪</a><a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
+    <div class="soc"><a href="https://wa.me/201012320764" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
     <div><h4>روابط سريعة</h4>${links.map(l => `<a href="${l[0]}">${l[1]}</a>`).join('')}</div>
     <div><h4>معلومات</h4><a href="about.html#faq">الأسئلة الشائعة</a><a href="about.html#returns">سياسة الاسترجاع</a><a href="about.html#privacy">سياسة الخصوصية</a><a href="about.html#shipping">الشحن والتوصيل</a></div>
-    <div><h4>تواصل</h4><p>01000000000</p><p>hello@zozostore.com</p></div></div>
+    <div><h4>تواصل</h4><p>01012320764</p><p>zs3574586@gmail.com</p></div></div>
     <p class="copy">© ${new Date().getFullYear()} ZOZO STORE. جميع الحقوق محفوظة</p></div></footer>`;
   // mobile menu
   $('#burger').onclick = () => $('#nav').classList.toggle('open');
