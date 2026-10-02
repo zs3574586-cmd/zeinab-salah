@@ -42,22 +42,6 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 1800);
 }
 
-/* ---------- 3. Cart (localStorage) ---------- */
-const getCart = () => { try { return JSON.parse(localStorage.getItem('zozoCart')) || []; } catch { return []; } };
-const saveCart = c => { localStorage.setItem('zozoCart', JSON.stringify(c)); updateBadge(); };
-function updateBadge() {
-  const n = getCart().reduce((s, i) => s + i.qty, 0);
-  const b = $('#badge'); if (b) b.textContent = n || '';
-}
-function addToCart(id, qty = 1, opt = null) {
-  const p = byId(id);
-  opt = opt || Object.fromEntries((p.options || []).map(o => [o.label, o.values[0]]));
-  const cart = getCart(), key = id + JSON.stringify(opt);
-  const ex = cart.find(i => i.key === key);
-  ex ? ex.qty += qty : cart.push({ key, id, qty, opt });
-  saveCart(cart); toast('تمت الإضافة إلى السلة 🛍');
-}
-
 /* ---------- 4. Shared layout: header & footer ---------- */
 const ico = {
   menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
@@ -74,17 +58,15 @@ function renderLayout() {
     <a class="logo" href="index.html">ZOZO<br>STORE</a>
     <nav class="nav" id="nav">${links.map(l => `<a href="${l[0]}" class="${l[0] === page ? 'on' : ''}">${l[1]}</a>`).join('')}</nav>
     <div class="icons"><button class="ib" id="sBtn" aria-label="بحث">${svg('search')}</button>
-      <a class="ib" href="cart.html" aria-label="السلة">${svg('bag')}<span id="badge"></span></a>
       <a class="ib" href="contact.html" aria-label="حسابي">${svg('user')}</a></div></div>
     <div class="sbar" id="sbar"><input id="q" type="search" placeholder="ابحثي عن منتج... مثال: كريستال"><div id="sres"></div></div></header>`;
   $('#ftr').outerHTML = `<footer class="ftr"><div class="wrap"><div class="ftr-g">
     <div><a class="logo" href="index.html">ZOZO<br>STORE</a><p>لمسات تجمع حب وتفاصيل تدوم</p>
-      <div class="soc"><a href="https://wa.me/201012320764" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
+      <div class="soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">in</a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">♪</a><a href="https://wa.me/201000000000" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
     <div><h4>روابط سريعة</h4>${links.map(l => `<a href="${l[0]}">${l[1]}</a>`).join('')}</div>
     <div><h4>معلومات</h4><a href="about.html#faq">الأسئلة الشائعة</a><a href="about.html#returns">سياسة الاسترجاع</a><a href="about.html#privacy">سياسة الخصوصية</a><a href="about.html#shipping">الشحن والتوصيل</a></div>
-    <div><h4>تواصل</h4><p>01012320764</p><p>zs3574586@gmail.com</p></div></div>
+    <div><h4>تواصل</h4><p>01000000000</p><p>hello@zozostore.com</p></div></div>
     <p class="copy">© ${new Date().getFullYear()} ZOZO STORE. جميع الحقوق محفوظة</p></div></footer>`;
-  updateBadge();
   // mobile menu
   $('#burger').onclick = () => $('#nav').classList.toggle('open');
   // search
@@ -104,7 +86,7 @@ const bestCard = p => `<article class="card"><a class="im" href="product.html#${
   <div class="acts"><a class="btn" href="product.html#${p.id}">عرض المنتج</a></div></div></article>`;
 const shopCard = p => `<article class="card"><a class="im" href="product.html#${p.id}">${imgTag(p)}</a>
   <div class="bd"><h3>${p.name}</h3>
-  <div class="acts"><a class="btn out" href="product.html#${p.id}">التفاصيل</a><button class="btn" data-add="${p.id}">أضف إلى السلة</button></div></div></article>`;
+  <div class="acts"><a class="btn" href="product.html#${p.id}">التفاصيل</a></div></div></article>`;
 
 /* ---------- 6. Pages ---------- */
 function pageHome() { $('#best').innerHTML = P.filter(p => p.best).map(bestCard).join(''); }
@@ -126,39 +108,9 @@ function pageProduct() {
     <div class="pd"><div class="pd-im">${imgTag(p)}</div><div>
       <h1>${p.name}</h1><p>${p.description}</p>
       ${(p.options || []).map((o, i) => `<div class="opt"><label>${o.label}</label><select data-opt="${o.label}">${o.values.map(v => `<option>${v}</option>`).join('')}</select></div>`).join('')}
-      <div class="opt"><label>الكمية</label><div class="qty"><button id="plus">+</button><span id="qv">1</span><button id="minus">−</button></div></div>
-      <div class="row"><button class="btn" id="addBtn">أضف إلى السلة</button><a class="btn out" href="cart.html">عرض السلة</a><button class="btn out" onclick="history.length>1?history.back():location.href='${CAT[p.category].page}'">رجوع</button></div>
+      <div class="row"><button class="btn out" onclick="history.length>1?history.back():location.href='${CAT[p.category].page}'">رجوع</button></div>
     </div></div>
     <section class="sec"><h2 class="sec-t">منتجات مشابهة</h2><div class="grid">${rel.map(bestCard).join('')}</div></section></div>`;
-  let q = 1;
-  const pl = $('#plus'); if (pl) pl.onclick = () => $('#qv').textContent = ++q;
-  const mi = $('#minus'); if (mi) mi.onclick = () => { if (q > 1) $('#qv').textContent = --q; };
-  const ab = $('#addBtn'); if (ab) ab.onclick = () => {
-    const opt = {}; document.querySelectorAll('[data-opt]').forEach(s => opt[s.dataset.opt] = s.value);
-    addToCart(p.id, q, opt);
-  };
-}
-
-function pageCart() {
-  const draw = () => {
-    const cart = getCart();
-    if (!cart.length) { $('#main').innerHTML = '<div class="wrap sec empty"><h2>سلتك فارغة 🛍</h2><br><a class="btn" href="index.html#categories">تسوقي الآن</a></div>'; return; }
-    $('#main').innerHTML = `<div class="wrap sec"><h1 class="sec-t">سلة التسوق</h1>
-      ${cart.map((i, k) => { const p = byId(i.id); return `<div class="ci">${imgTag(p)}
-        <div><b>${p.name}</b><br><small>${Object.values(i.opt).join(' • ')}</small></div>
-        <div class="qty"><button data-q="${k}" data-d="1">+</button><span>${i.qty}</span><button data-q="${k}" data-d="-1">−</button></div>
-        <button class="rm" data-rm="${k}">حذف ✕</button></div>`; }).join('')}
-      <div class="row"><button class="btn" id="checkout">إتمام الطلب</button><a class="btn out" href="index.html#categories">متابعة التسوق</a></div></div>`;
-    $('#checkout').onclick = () => { localStorage.removeItem('zozoCart'); updateBadge(); toast('تم استلام طلبك، شكراً لكِ 🤍'); draw(); };
-  };
-  draw();
-  $('#main').addEventListener('click', e => {
-    const c = getCart(), t = e.target;
-    if (t.dataset.rm !== undefined) c.splice(t.dataset.rm, 1);
-    else if (t.dataset.q !== undefined) { c[t.dataset.q].qty = Math.max(1, c[t.dataset.q].qty + Number(t.dataset.d)); }
-    else return;
-    saveCart(c); draw();
-  });
 }
 
 function pageContact() {
@@ -169,7 +121,5 @@ function pageContact() {
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout();
   const page = document.body.dataset.page;
-  ({ home: pageHome, category: pageCategory, product: pageProduct, cart: pageCart, contact: pageContact }[page] || (() => {}))();
-  // add-to-cart buttons on category pages
-  document.addEventListener('click', e => { const b = e.target.closest('[data-add]'); if (b) addToCart(b.dataset.add); });
+  ({ home: pageHome, category: pageCategory, product: pageProduct, contact: pageContact }[page] || (() => {}))();
 });
