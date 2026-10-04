@@ -10,19 +10,22 @@ const colors = { label: 'اللون', values: ['ذهبي', 'فضي', 'روز ج�
 const sizes = { label: 'المقاس', values: ['صغير', 'وسط', 'كبير'] };
 const names = { label: 'الاسم المراد كتابته', values: ['بدون كتابة', 'اسم العروسين', 'اسم العروسين + التاريخ'] };
 const P = [
-  { id: 1, category: 'trays', name: 'صينية كريستال دائرية', price: 850, best: true, image: 'images/trays/tray1.jpg', description: 'صينية أنيقة مصممة خصيصاً لحفلات الخطوبة والزفاف، بتفاصيل كريستال لامعة وإطار ذهبي فاخر.', options: [colors, sizes] },
-  { id: 2, category: 'trays', name: 'صينية الورد الملكية', price: 720, best: true, image: 'images/trays/tray2.jpg', description: 'صينية مزينة بورود صناعية فاخرة تناسب تقديم الشربات والحلويات.', options: [colors, sizes] },
-  { id: 3, category: 'trays', name: 'صينية اللؤلؤ الذهبية', price: 940, image: 'images/trays/tray3.jpg', description: 'تصميم راقٍ بحواف من اللؤلؤ الطبيعي ولمسات ذهبية.', options: [colors, sizes] },
-  { id: 4, category: 'trays', name: 'صينية الخطوبة البيضاء', price: 600, image: 'images/trays/tray4.jpg', description: 'صينية بيضاء ناعمة بتصميم بسيط وأنيق ليوم الخطوبة.', options: [sizes] },
-  { id: 5, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray5.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 6, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray6.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 7, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 8, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 9, category: 'trays', name: 'صينية كريستال مستطيلة', price: 890, image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 10, category: 'fingerprint', name: 'لوحة بصمة القلب', price: 450, best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
-  { id: 11, category: 'fingerprint', name: 'إطار بصمة الزفاف', price: 520, image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
-  { id: 12, category: 'fingerprint', name: 'بصمة شجرة العائلة', price: 650, image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
-  { id: 13, category: 'hoops', name: 'طوق الورد الكلاسيك', price: 380, best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
+  { id: 1, category: 'trays', name: 'صينية بداية الحكاية', best: true, image: 'images/trays/tray1.jpg', description: 'صينية أنيقة مصممة خصيصاً لحفلات الخطوبة والزفاف، بتفاصيل كريستال لامعة وإطار ذهبي فاخر.', options: [colors, sizes] },
+  { id: 2, category: 'trays', name: 'صينية عهد المحبة', best: true, image: 'images/trays/tray2.jpg', description: 'صينية مزينة بورود صناعية فاخرة تناسب تقديم الشربات والحلويات.', options: [colors, sizes] },
+  { id: 3, category: 'trays', name: 'صينية حكاية حب', image: 'images/trays/tray3.jpg', description: 'تصميم راقٍ بحواف من اللؤلؤ الطبيعي ولمسات ذهبية.', options: [colors, sizes] },
+  { id: 4, category: 'trays', name: 'صينية قلبين وحكاية', image: 'images/trays/tray4.jpg', description: 'صينية بيضاء ناعمة بتصميم بسيط وأنيق ليوم الخطوبة.', options: [sizes] },
+  { id: 5, category: 'trays', name: 'صينية أجمل اختيار', image: 'images/trays/tray5.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 6, category: 'trays', name: 'صينية تاج العروس', image: 'images/trays/tray6.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 7, category: 'trays', name: 'صينية اختيار القلب', image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 8, category: 'trays', name: 'صينية وعد العمر', image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 9, category: 'trays', name: 'صينية لمسة ذهب',  image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 10, category: 'fingerprint', name: 'بصمة حكاية العمر', best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
+  { id: 11, category: 'fingerprint', name: 'بصمة ليلة العمر', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
+  { id: 12, category: 'fingerprint', name: 'بصمة نبض القلوب', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 13, category: 'hoops', name: 'طوق اللؤلؤ الملكي', best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 14, category: 'hoops', name: 'طوق ليلة العمر', best: true, image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 15, category: 'hoops', name: 'طوق الفرحة البيضاء', best: true, image: 'images/hoops/hoop3.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
+
 ];
 
 /* ---------- 2. Helpers ---------- */
