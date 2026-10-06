@@ -23,8 +23,7 @@ const P = [
   { id: 11, category: 'fingerprint', name: 'بصمة ليلة العمر', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
   { id: 12, category: 'fingerprint', name: 'بصمة نبض القلوب', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
   { id: 13, category: 'hoops', name: 'طوق اللؤلؤ الملكي', best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-  { id: 14, category: 'hoops', name: 'طوق ليلة العمر', best: true, image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-  { id: 15, category: 'hoops', name: 'طوق الفرحة البيضاء', best: true, image: 'images/hoops/hoop3.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
+  { id: 14, category: 'hoops', name: 'طوق ليلة العمر', best: true, image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
 
 ];
 
