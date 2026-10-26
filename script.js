@@ -10,21 +10,20 @@ const colors = { label: 'اللون', values: ['ذهبي', 'فضي', 'روز ج�
 const sizes = { label: 'المقاس', values: ['صغير', 'وسط', 'كبير'] };
 const names = { label: 'الاسم المراد كتابته', values: ['بدون كتابة', 'اسم العروسين', 'اسم العروسين + التاريخ'] };
 const P = [
-  { id: 1, category: 'trays', name: 'صينية بداية الحكاية', best: true, image: 'images/trays/tray1.jpg', description: 'صينية أنيقة مصممة خصيصاً لحفلات الخطوبة والزفاف، بتفاصيل كريستال لامعة وإطار ذهبي فاخر.', options: [colors, sizes] },
-  { id: 2, category: 'trays', name: 'صينية عهد المحبة', best: true, image: 'images/trays/tray2.jpg', description: 'صينية مزينة بورود صناعية فاخرة تناسب تقديم الشربات والحلويات.', options: [colors, sizes] },
-  { id: 3, category: 'trays', name: 'صينية حكاية حب', image: 'images/trays/tray3.jpg', description: 'تصميم راقٍ بحواف من اللؤلؤ الطبيعي ولمسات ذهبية.', options: [colors, sizes] },
-  { id: 4, category: 'trays', name: 'صينية قلبين وحكاية', image: 'images/trays/tray4.jpg', description: 'صينية بيضاء ناعمة بتصميم بسيط وأنيق ليوم الخطوبة.', options: [sizes] },
-  { id: 5, category: 'trays', name: 'صينية أجمل اختيار', image: 'images/trays/tray5.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 6, category: 'trays', name: 'صينية تاج العروس', image: 'images/trays/tray6.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 7, category: 'trays', name: 'صينية اختيار القلب', image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 8, category: 'trays', name: 'صينية وعد العمر', image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 9, category: 'trays', name: 'صينية لمسة ذهب',  image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 10, category: 'fingerprint', name: 'بصمة حكاية العمر', best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
-  { id: 11, category: 'fingerprint', name: 'بصمة ليلة العمر', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
-  { id: 12, category: 'fingerprint', name: 'بصمة نبض القلوب', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
-  { id: 13, category: 'hoops', name: 'طوق اللؤلؤ الملكي', best: true, image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-  { id: 14, category: 'hoops', name: 'طوق ليلة العمر', best: true, image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
-
+  { id: 1, category: 'trays', best: true, image: 'images/trays/tray1.jpg', description: 'صينية أنيقة مصممة خصيصاً لحفلات الخطوبة والزفاف، بتفاصيل كريستال لامعة وإطار ذهبي فاخر.', options: [colors, sizes] },
+  { id: 2, category: 'trays', best: true, image: 'images/trays/tray2.jpg', description: 'صينية مزينة بورود صناعية فاخرة تناسب تقديم الشربات والحلويات.', options: [colors, sizes] },
+  { id: 3, category: 'trays', image: 'images/trays/tray3.jpg', description: 'تصميم راقٍ بحواف من اللؤلؤ الطبيعي ولمسات ذهبية.', options: [colors, sizes] },
+  { id: 4, category: 'trays', image: 'images/trays/tray4.jpg', description: 'صينية بيضاء ناعمة بتصميم بسيط وأنيق ليوم الخطوبة.', options: [sizes] },
+  { id: 5, category: 'trays', image: 'images/trays/tray5.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 6, category: 'trays', image: 'images/trays/tray6.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 7, category: 'trays', image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 8, category: 'trays', image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 9, category: 'trays', image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 10, category: 'fingerprint', best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
+  { id: 11, category: 'fingerprint', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
+  { id: 12, category: 'fingerprint', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 13, category: 'hoops', image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 14, category: 'hoops', image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
 ];
 
 /* ---------- 2. Helpers ---------- */
@@ -33,10 +32,10 @@ const byId = id => P.find(p => p.id === Number(id));
 const money = n => n.toLocaleString('en') + ' EGP';
 /* SVG placeholder used when a real image file is missing */
 function ph(label) {
-  const s = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e8cc"/><stop offset="1" stop-color="#d9b877"/></linearGradient></defs><rect width="500" height="500" fill="url(#g)"/><text x="250" y="260" font-size="90" text-anchor="middle">💍</text><text x="250" y="340" font-size="26" text-anchor="middle" fill="#7d6e5e" font-family="Tahoma">${label}</text></svg>`;
+  const s = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e8cc"/><stop offset="1" stop-color="#d9b877"/></linearGradient></defs><rect width="500" height="500" fill="url(#g)"/><text x="250" y="260" font-size="90" text-anchor="middle">💍</text></svg>`;
   return 'data:image/svg+xml,' + encodeURIComponent(s);
 }
-const imgTag = p => `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src=ph('${p.name}')">`;
+const imgTag = p => `<img src="${p.image}" alt="" loading="lazy" onerror="this.onerror=null;this.src=ph()">`;
 function toast(msg) {
   let t = $('#toast');
   if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }
@@ -59,35 +58,25 @@ function renderLayout() {
     <button class="ib burger" id="burger" aria-label="القائمة">${svg('menu')}</button>
     <a class="logo" href="index.html">ZOZO<br>STORE</a>
     <nav class="nav" id="nav">${links.map(l => `<a href="${l[0]}" class="${l[0] === page ? 'on' : ''}">${l[1]}</a>`).join('')}</nav>
-    <div class="icons"><button class="ib" id="sBtn" aria-label="بحث">${svg('search')}</button>
-      <a class="ib" href="contact.html" aria-label="حسابي">${svg('user')}</a></div></div>
-    <div class="sbar" id="sbar"><input id="q" type="search" placeholder="ابحثي عن منتج... مثال: كريستال"><div id="sres"></div></div></header>`;
+    <div class="icons"><a class="ib" href="contact.html" aria-label="حسابي">${svg('user')}</a></div></div></header>`;
   $('#ftr').outerHTML = `<footer class="ftr"><div class="wrap"><div class="ftr-g">
     <div><a class="logo" href="index.html">ZOZO<br>STORE</a><p>لمسات تجمع حب وتفاصيل تدوم</p>
-    <div class="soc"><a href="https://wa.me/201012320764" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
+      <div class="soc"><a href="https://wa.me/201012320764" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a></div></div>
     <div><h4>روابط سريعة</h4>${links.map(l => `<a href="${l[0]}">${l[1]}</a>`).join('')}</div>
     <div><h4>معلومات</h4><a href="about.html#faq">الأسئلة الشائعة</a><a href="about.html#returns">سياسة الاسترجاع</a><a href="about.html#privacy">سياسة الخصوصية</a><a href="about.html#shipping">الشحن والتوصيل</a></div>
     <div><h4>تواصل</h4><p>01012320764</p><p>zs3574586@gmail.com</p></div></div>
     <p class="copy">© ${new Date().getFullYear()} ZOZO STORE. جميع الحقوق محفوظة</p></div></footer>`;
   // mobile menu
   $('#burger').onclick = () => $('#nav').classList.toggle('open');
-  // search
-  $('#sBtn').onclick = () => { $('#sbar').classList.toggle('open'); $('#q').focus(); };
-  $('#q').oninput = e => {
-    const v = e.target.value.trim(), box = $('#sres');
-    if (!v) return box.innerHTML = '';
-    const r = P.filter(p => p.name.includes(v)).slice(0, 8);
-    box.innerHTML = r.length ? r.map(p => `<a href="product.html#${p.id}">${imgTag(p)}<span>${p.name}</span></a>`).join('') : '<p class="empty">لا توجد نتائج</p>';
-  };
 }
 
 /* ---------- 5. Product card templates ---------- */
 /* "best" cards: image + name + price + view button ONLY (no heart, no cart) */
 const bestCard = p => `<article class="card"><a class="im" href="product.html#${p.id}">${imgTag(p)}</a>
-  <div class="bd"><h3>${p.name}</h3>
+  <div class="bd">
   <div class="acts"><a class="btn" href="product.html#${p.id}">عرض المنتج</a></div></div></article>`;
 const shopCard = p => `<article class="card"><a class="im" href="product.html#${p.id}">${imgTag(p)}</a>
-  <div class="bd"><h3>${p.name}</h3>
+  <div class="bd">
   <div class="acts"><a class="btn" href="product.html#${p.id}">التفاصيل</a></div></div></article>`;
 
 /* ---------- 6. Pages ---------- */
@@ -103,12 +92,11 @@ function pageProduct() {
   window.addEventListener('hashchange', () => location.reload());
   const p = byId(location.hash.slice(1));
   if (!p) { $('#main').innerHTML = '<div class="empty wrap"><h2>المنتج غير موجود</h2><a class="btn" href="index.html">العودة للرئيسية</a></div>'; return; }
-  document.title = p.name + ' | ZOZO STORE';
   const rel = P.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
   $('#main').innerHTML = `<div class="wrap">
     <div class="crumb"><a href="${CAT[p.category].page}">→ ${CAT[p.category].title}</a></div>
     <div class="pd"><div class="pd-im">${imgTag(p)}</div><div>
-      <h1>${p.name}</h1><p>${p.description}</p>
+      <p>${p.description}</p>
       ${(p.options || []).map((o, i) => `<div class="opt"><label>${o.label}</label><select data-opt="${o.label}">${o.values.map(v => `<option>${v}</option>`).join('')}</select></div>`).join('')}
       <div class="row"><button class="btn out" onclick="history.length>1?history.back():location.href='${CAT[p.category].page}'">رجوع</button></div>
     </div></div>
