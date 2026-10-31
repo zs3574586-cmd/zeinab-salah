@@ -19,11 +19,18 @@ const P = [
   { id: 7, category: 'trays', image: 'images/trays/tray7.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
   { id: 8, category: 'trays', image: 'images/trays/tray8.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
   { id: 9, category: 'trays', image: 'images/trays/tray9.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
-  { id: 10, category: 'fingerprint', best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
-  { id: 11, category: 'fingerprint', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
-  { id: 12, category: 'fingerprint', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
-  { id: 13, category: 'hoops', image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
-  { id: 14, category: 'hoops', image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
+  { id: 10, category: 'trays', image: 'images/trays/tray10.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 11, category: 'trays', image: 'images/trays/tray11.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 12, category: 'trays', image: 'images/trays/tray12.jpg', description: 'صينية مستطيلة بتفاصيل كريستال وعرض مميز للهدايا.', options: [colors, sizes] },
+  { id: 13, category: 'fingerprint', best: true, image: 'images/fingerprint/fp1.jpg', description: 'لوحة بصمة على شكل قلب تجمع بصمتي العروسين مع الاسم والتاريخ.', options: [names, sizes] },
+  { id: 14, category: 'fingerprint', image: 'images/fingerprint/fp2.jpg', description: 'إطار خشبي فاخر لبصمة الزفاف مع كتابة مخصصة.', options: [names, sizes] },
+  { id: 15, category: 'fingerprint', image: 'images/fingerprint/fp3.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 16, category: 'fingerprint', image: 'images/fingerprint/fp4.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 17, category: 'fingerprint', image: 'images/fingerprint/fp5.jpg', description: 'شجرة بصمات تجمع العائلة في ذكرى واحدة جميلة.', options: [names, sizes] },
+  { id: 18, category: 'hoops', image: 'images/hoops/hoop1.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 19, category: 'hoops', image: 'images/hoops/hoop2.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 20, category: 'hoops', image: 'images/hoops/hoop3.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] },
+  { id: 21, category: 'hoops', image: 'images/hoops/hoop4.jpg', description: 'طوق مزين بالورد لعرض الدبل بشكل أنيق يوم الخطوبة.', options: [colors] }
 ];
 
 /* ---------- 2. Helpers ---------- */
